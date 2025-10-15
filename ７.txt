@@ -1,0 +1,19 @@
+# sentiment_analysis.py
+# -----------------------
+# TextBlobで文章のポジティブ/ネガティブを分析
+# -----------------------
+
+from textblob import TextBlob
+
+text = input("文章を入力してください: ")
+blob = TextBlob(text)
+
+polarity = blob.sentiment.polarity
+
+print(f"感情スコア: {polarity}")
+if polarity > 0:
+    print("ポジティブな文章です。😊")
+elif polarity < 0:
+    print("ネガティブな文章です。😞")
+else:
+    print("ニュートラルな文章です。😐")
